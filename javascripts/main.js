@@ -7,7 +7,7 @@ $(document).ready(function() {
   $.ajax({
     url: "../songs.json"
   }).done(function(data) {
-    songs = data.songs
+    songs = data.songs;
     console.log("data", data);
     $.ajax({
       url: "../songs2.json"
@@ -18,8 +18,10 @@ $(document).ready(function() {
         
         data2.songs.forEach(function(song){
           songs.push(song);
-        })
+        });
+
         console.log("songs", songs);
+        
         for (var i = 0; i < songs.length; i++) {
           currentSong = songs[i];
 
@@ -38,7 +40,7 @@ $(document).ready(function() {
         contentEl.html(songData);
       }).fail(function(error) {
         console.log( "error" , error);
-      })
+      });
   }).fail(function(error) {
     console.log( "error" , error);
   });
